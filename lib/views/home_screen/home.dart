@@ -17,8 +17,8 @@ class Home extends StatelessWidget {
 
     var navScreens = [
       HomeScreen(),
-      OrdersScreen(),
       ProductsScreen(),
+      OrdersScreen(),
       ProfileScreen()
     ];
     var bottomNavbar = [
