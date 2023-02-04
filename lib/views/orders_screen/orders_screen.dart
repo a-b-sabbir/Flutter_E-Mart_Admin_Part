@@ -1,4 +1,5 @@
 import 'package:e_mart_admin/const/const.dart';
+import 'package:e_mart_admin/views/orders_screen/orders_details.dart';
 import 'package:e_mart_admin/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
@@ -18,7 +19,9 @@ class OrdersScreen extends StatelessWidget {
           children: List.generate(
               10,
               (index) => ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(OrderDetails());
+                    },
                     tileColor: textfieldGrey,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)),
