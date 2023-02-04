@@ -46,15 +46,18 @@ class ProductsScreen extends StatelessWidget {
                               menuBuilder: () => Column(
                                     children: List.generate(
                                         popupMenuTitles.length,
-                                        (index) => Row(
-                                              children: [
-                                                Icon(popupMenuIcons[index]),
-                                                5.widthBox,
-                                                normalText(
-                                                    text:
-                                                        popupMenuTitles[index],
-                                                    color: darkGrey)
-                                              ],
+                                        (index) => Padding(
+                                              padding: EdgeInsets.all(12.0),
+                                              child: Row(
+                                                children: [
+                                                  Icon(popupMenuIcons[index]),
+                                                  5.widthBox,
+                                                  normalText(
+                                                      text: popupMenuTitles[
+                                                          index],
+                                                      color: darkGrey)
+                                                ],
+                                              ).onTap(() {}),
                                             )),
                                   )
                                       .box

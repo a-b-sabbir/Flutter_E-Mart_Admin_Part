@@ -6,3 +6,6 @@ const profileIconsTitle = [shopSettings, messages, logout];
 
 const popupMenuIcons = [Icons.featured_play_list, Icons.edit, Icons.delete];
 const popupMenuTitles = [featured, edit, remove];
+
+const profileButtonsIcons = [Icons.settings, Icons.chat];
+const profileButtonsTitles = [shopSettings, messages];

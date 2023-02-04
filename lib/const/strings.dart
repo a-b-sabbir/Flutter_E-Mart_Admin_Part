@@ -3,6 +3,7 @@ const appname = "eMart Seller App",
     welcome = "Hi, Welcome to",
     email = "Email",
     password = "Password",
+    confirmPassword = 'Confirm Password',
     forgotPassword = "Forgot Password?",
     anyProblem = "In case of any difficulty, contact administration",
     credit = "@A B SABBIR",
@@ -24,7 +25,9 @@ const appname = "eMart Seller App",
     logout = 'Log out',
     editProfile = 'Edit Profile',
     changeImage = 'Change Image',
-    popularProducts = 'Popular Products';
+    userName = 'User name',
+    popularProducts = 'Popular Products',
+    chats = 'Chats';
 
 //shop settings strings
 
@@ -36,5 +39,6 @@ const nameHint = 'eg. VendorName',
     description = 'Description',
     mobile = 'Shop Mobile',
     website = 'Shop Website',
-    name = 'Shop Name',
-    address = 'Shop Address';
+    shopName = 'Shop Name',
+    shopAddress = 'Shop Address',
+    save = 'Save';
