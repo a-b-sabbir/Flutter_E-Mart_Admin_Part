@@ -1,5 +1,6 @@
 import 'package:e_mart_admin/const/colors.dart';
 import 'package:e_mart_admin/const/const.dart';
+import 'package:e_mart_admin/views/messages_screen.dart/chats_screen.dart';
 import 'package:e_mart_admin/widgets/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,7 +13,12 @@ class MessagesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(Icons.arrow_back, color: darkGrey),
+        ),
         title: boldText(text: messages, size: 20.0, color: fontGrey),
       ),
       body: Padding(
@@ -23,7 +29,9 @@ class MessagesScreen extends StatelessWidget {
             children: List.generate(
                 20,
                 (index) => ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(ChatsScreen());
+                    },
                     leading: CircleAvatar(
                       backgroundColor: purpleColor,
                       child: Icon(Icons.person),
