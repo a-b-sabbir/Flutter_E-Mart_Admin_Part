@@ -1,3 +1,4 @@
+import 'package:e_mart_admin/views/products_screen/product_details.dart';
 import 'package:e_mart_admin/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:e_mart_admin/const/const.dart';
@@ -30,7 +31,9 @@ class ProductsScreen extends StatelessWidget {
                   9,
                   (index) => Card(
                         child: ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(() => ProductDetails());
+                          },
                           leading: Image.asset(
                             img_product,
                             height: 100,
