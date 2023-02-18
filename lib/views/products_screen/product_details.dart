@@ -2,8 +2,6 @@ import 'package:e_mart_admin/const/colors.dart';
 import 'package:e_mart_admin/const/const.dart';
 import 'package:e_mart_admin/widgets/text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -97,6 +95,11 @@ class ProductDetails extends StatelessWidget {
                       ),
                     ],
                   ).box.white.padding(EdgeInsets.all(8.0)).make(),
+                  20.heightBox,
+                  Divider(), 
+                  boldText(text: 'Description: ', color: fontGrey),
+                  10.heightBox,
+                  normalText(text: 'Description of the items', color: fontGrey)
                 ],
               ),
             )

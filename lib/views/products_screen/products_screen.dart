@@ -1,3 +1,4 @@
+import 'package:e_mart_admin/views/products_screen/add_product.dart';
 import 'package:e_mart_admin/views/products_screen/product_details.dart';
 import 'package:e_mart_admin/widgets/appbar.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,9 @@ class ProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => AddProduct());
+        },
         backgroundColor: purpleColor,
         child: Icon(Icons.add),
       ),
