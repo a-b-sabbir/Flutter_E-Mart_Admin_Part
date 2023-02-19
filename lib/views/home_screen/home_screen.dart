@@ -17,36 +17,36 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  dashboard_button(context,
-                      title: products, count: 70, icon: ic_products),
-                  dashboard_button(context,
-                      title: orders, count: 10, icon: ic_orders),
-                ],
-              ),
-              15.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  dashboard_button(context,
-                      title: rating, count: 70, icon: ic_star),
-                  dashboard_button(context,
-                      title: totalSales, count: 10, icon: ic_shop_setting),
-                ],
-              ),
-              10.heightBox,
-              Divider(),
-              10.heightBox,
-              boldText(text: popularProducts, size: 16.0, color: fontGrey),
-              20.heightBox,
-              ListView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                dashboard_button(context,
+                    title: products, count: 70, icon: ic_products),
+                dashboard_button(context,
+                    title: orders, count: 10, icon: ic_orders),
+              ],
+            ),
+            15.heightBox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                dashboard_button(context,
+                    title: rating, count: 70, icon: ic_star),
+                dashboard_button(context,
+                    title: totalSales, count: 10, icon: ic_shop_setting),
+              ],
+            ),
+            10.heightBox,
+            Divider(),
+            10.heightBox,
+            boldText(text: popularProducts, size: 16.0, color: fontGrey),
+            20.heightBox,
+            Expanded(
+              child: ListView(
+                physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 children: List.generate(
                     9,
@@ -63,9 +63,9 @@ class HomeScreen extends StatelessWidget {
                           subtitle:
                               normalText(text: 'Good Product', color: darkGrey),
                         )),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

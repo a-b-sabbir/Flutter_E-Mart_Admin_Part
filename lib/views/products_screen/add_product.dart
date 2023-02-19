@@ -30,41 +30,70 @@ class AddProduct extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            customTextField(
-              hint: 'eg. BMW',
-              label: 'Product Name',
-            ),
-            10.heightBox,
-            customTextField(
-                hint: 'eg. Nice Product',
-                label: 'Product Description',
-                isDesc: true),
-            10.heightBox,
-            customTextField(
-              hint: 'eg. \$100',
-              label: 'Product Price',
-            ),
-            10.heightBox,
-            customTextField(hint: 'eg. 20', label: 'Quantity'),
-            10.heightBox,
-            productDropdown(),
-            10.heightBox,
-            productDropdown(),
-            15.heightBox,
-            boldText(text: 'Choose Product Images', color: white),
-            10.heightBox,
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              customTextField(
+                hint: 'eg. BMW',
+                label: 'Product Name',
+              ),
+              10.heightBox,
+              customTextField(
+                  hint: 'eg. Nice Product',
+                  label: 'Product Description',
+                  isDesc: true),
+              10.heightBox,
+              customTextField(
+                hint: 'eg. \$100',
+                label: 'Product Price',
+              ),
+              10.heightBox,
+              customTextField(hint: 'eg. 20', label: 'Quantity'),
+              10.heightBox,
+              productDropdown(),
+              10.heightBox,
+              productDropdown(),
+              15.heightBox,
+              Divider(color: white),
+              boldText(text: 'Choose Product Images', color: white),
+              10.heightBox,
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: List.generate(
+                      3, (index) => productImage(label: "${index + 1}"))),
+              5.heightBox,
+              normalText(
+                  text: 'First image will be your display image',
+                  color: lightGrey),
+              10.heightBox,
+              Divider(color: white),
+              boldText(text: 'Choose Product Colors', color: white),
+              10.heightBox,
+              Wrap(
+                spacing: 10.0, // horizontal spacing
+                runSpacing: 10.0, // vertical spacing
                 children: List.generate(
-                    3, (index) => productImage(label: "${index + 1}"))),
-            5.heightBox,
-            normalText(
-                text: 'First image will be your display image',
-                color: lightGrey)
-          ],
+                  9,
+                  (index) => Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      VxBox()
+                          .color(Vx.randomPrimaryColor)
+                          .roundedFull
+                          .size(60, 60)
+                          .make(),
+                      Icon(
+                        Icons.done,
+                        color: white,
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
