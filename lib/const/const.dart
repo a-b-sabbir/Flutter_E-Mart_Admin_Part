@@ -5,3 +5,4 @@ export './colors.dart';
 export './lists.dart';
 export './strings.dart';
 export './images.dart';
+export './firebase_const.dart';

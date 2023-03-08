@@ -42,3 +42,5 @@ const nameHint = 'eg. VendorName',
     shopName = 'Shop Name',
     shopAddress = 'Shop Address',
     save = 'Save';
+
+const loggedin = 'Logged In';
