@@ -1,6 +1,7 @@
 import 'package:e_mart_admin/const/const.dart';
 import 'package:e_mart_admin/controller/auth_controller.dart';
 import 'package:e_mart_admin/views/home_screen/home.dart';
+import 'package:e_mart_admin/widgets/loading_indicator.dart';
 import 'package:e_mart_admin/widgets/ourButton.dart';
 import 'package:e_mart_admin/widgets/text_style.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(
                         width: context.screenWidth - 100,
                         child: controller.isLoading.value
-                            ? CircularProgressIndicator()
+                            ? loadingIndicator()
                             : ourButton(
                                 title: login,
                                 color: purpleColor,
