@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_mart_admin/const/const.dart';
 import 'package:e_mart_admin/controller/auth_controller.dart';
+import 'package:e_mart_admin/controller/profile_controller.dart';
 import 'package:e_mart_admin/services/store_services.dart';
 import 'package:e_mart_admin/views/auth_screen/login_screen.dart';
 import 'package:e_mart_admin/views/messages_screen.dart/messages_screen.dart';
@@ -16,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProfileController());
     return Scaffold(
       backgroundColor: purpleColor,
       appBar: AppBar(
@@ -24,7 +26,9 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Get.to(EditProfileScreen());
+                Get.to(EditProfileScreen(
+                  username: controller.snapshotData['vendor_name'],
+                ));
               },
               icon: Icon(Icons.edit))
         ],
@@ -35,18 +39,21 @@ class ProfileScreen extends StatelessWidget {
           if (!snapshot.hasData) {
             return loadingIndicator(circleColor: white);
           } else {
-            var data = snapshot.data!.docs[0];
+            controller.snapshotData = snapshot.data!.docs[0];
             return Column(
               children: [
                 ListTile(
-                    leading: Image.asset(img_product)
-                        .box
-                        .roundedFull
-                        .clip(Clip.antiAlias)
-                        .make(),
-                    title:
-                        boldText(text: '${data['vendor_name']}', color: white),
-                    subtitle: normalText(text: '${data['email']}'),
+                    leading:
+                        Image.network('${controller.snapshotData['imageUrl']}')
+                            .box
+                            .roundedFull
+                            .clip(Clip.antiAlias)
+                            .make(),
+                    title: boldText(
+                        text: '${controller.snapshotData['vendor_name']}',
+                        color: white),
+                    subtitle:
+                        normalText(text: '${controller.snapshotData['email']}'),
                     trailing: ElevatedButton(
                         style: ElevatedButton.styleFrom(backgroundColor: white),
                         onPressed: () async {
